@@ -1,14 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-ربات اختصاصی جومونگ | قلمرو گوگوریو  (برای پیام‌رسان بله)
 
-نصب وابستگی: هیچ! فقط Python 3.8 به بالا (فقط کتابخانه‌ی استاندارد).
-تنظیم توکن: مقدار BOT_TOKEN را در چند خط پایین‌تر پر کنید
-            (یا متغیر محیطی BALE_BOT_TOKEN را تنظیم کنید).
-اجرا:       python jumong_bot.py
-تست داخلی:  python jumong_bot.py --selftest
-"""
 
 import json
 import logging
