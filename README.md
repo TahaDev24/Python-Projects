@@ -1,32 +1,32 @@
-👨🏻‍💻 طاها حصارکی
+👨🏻‍💻 Taha Hesaraki
 
-🐍 توسعه‌دهنده پایتون | 🤖 هوش مصنوعی | ⚙️ توسعه ربات و خودکارسازی
-
----
-
-👤 درباره من
-
-برنامه‌نویس پایتون با تمرکز بر توسعه نرم‌افزار، طراحی ربات، یکپارچه‌سازی API و خودکارسازی فرایندها. علاقه‌مند به طراحی سیستم‌های کاربردی، مدیریت داده‌ها و حل مسائل فنی.
+🐍 Python Developer | 🤖 Artificial Intelligence | ⚙️ Bot Development & Automation
 
 ---
 
-🛠️ مهارت‌های فنی
+👤 About Me
 
-- 🐍 زبان برنامه‌نویسی: Python
-- 🗄️ پایگاه داده: SQLite و SQL
-- 🔌 API: اتصال به سرویس‌های خارجی
-- 🤖 توسعه ربات: ربات‌های پیام‌رسان و سیستم‌های تعاملی
-- ⚙️ توسعه نرم‌افزار: طراحی توابع، ماژول‌بندی و اشکال‌زدایی
-- 🧠 هوش مصنوعی: مفاهیم یادگیری ماشین و پردازش داده
-- 🔧 ابزارها: Git، GitHub و Markdown
-- 🔄 خودکارسازی: پیاده‌سازی فرایندهای خودکار
+A Python developer focused on software development, bot design, API integration, and process automation. Interested in building practical systems, managing data, and solving technical problems.
 
 ---
 
-🎓 گواهینامه‌ها
+🛠️ Technical Skills
 
-- 📜 برنامه‌نویسی پیشرفته پایتون
-- 🧠 هوش مصنوعی پیشرفته
+- 🐍 Programming Language: Python
+- 🗄️ Databases: SQLite and SQL
+- 🔌 APIs: Integration with external services
+- 🤖 Bot Development: Messaging-platform bots and interactive systems
+- ⚙️ Software Development: Function design, modularization, and debugging
+- 🧠 Artificial Intelligence: Machine learning concepts and data processing
+- 🔧 Tools: Git, GitHub, and Markdown
+- 🔄 Automation: Implementing automated workflows
+
+---
+
+🎓 Certificates
+
+- 📜 Advanced Python Programming
+- 🧠 Advanced Artificial Intelligence
 
 ---
 
