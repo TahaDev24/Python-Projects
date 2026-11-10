@@ -1,70 +1,103 @@
-🤖 صفابات
+🤖 SAFABAT
 
-صفابات یک ربات چندمنظوره و تک‌فایلی برای گروه‌های پیام‌رسان بله است که امکانات سرگرمی، رقابت و مدیریت گروه را در یک مجموعه ارائه می‌کند.
-نکتهٔ امنیتی: توکن ربات و شناسهٔ مدیر اطلاعات محرمانه‌اند. آن‌ها را در کد منبع یا فایل‌های عمومی GitHub قرار نده.
+Safabat is a multi-purpose, single-file bot for Bale messaging groups, combining entertainment, competition, and group management features.
 
-✨ امکانات
+Security note: The bot token and administrator ID are confidential. Do not place them in source code or public GitHub files.
 
-منو و تنظیمات گروه
-پاسخ‌گویی متنی
-جوک، جوک‌متر و فال
-۱۳ بازی سرگرم‌کننده
-سیستم امتیاز تجربه (XP)، سطح، مدال، مأموریت و لیگ
-آمار و قابلیت‌های حافظه و DNA ربات
-ابزارهای مدیریت گروه
-آزمایشگاه و رویدادها
-ذخیره‌سازی داده‌ها با SQLite
-ثبت گزارش اجرا و خطا
-این فهرست بر اساس توضیحات و ساختار کد تهیه شده است. عملکرد تمام قابلیت‌ها هنوز در محیط واقعی بله به‌طور کامل تأیید نشده است.
+✨ Features
 
-🧰 پیش‌نیازها
+- Group menus and settings
+- Text-based responses
+- Jokes, joke meter, and fortune feature
+- 13 entertaining games
+- Experience points (XP), levels, medals, missions, and league system
+- Statistics and bot memory/DNA features
+- Group management tools
+- Labs and events
+- SQLite data storage
+- Runtime and error logging
 
-Python نسخهٔ 3.10 یا بالاتر
-کتابخانهٔ requests
-توکن معتبر ربات بله
+This feature list is based on the project description and code structure. Not all features have been fully verified in the live Bale environment.
 
-🚀 نصب و راه‌اندازی
+🧰 Requirements
 
-۱. نصب کتابخانهٔ موردنیاز
+- Python 3.10 or later
+- `requests` library
+- A valid Bale bot token
+
+🚀 Installation and Setup
+
+1. Install the required library:
+
+```bash
 python -m pip install requests
-اگر دستور python در محیطت در دسترس نیست، از python3 استفاده کن.
-۲. تنظیم اطلاعات ربات
-برنامه اطلاعات حساس را از متغیرهای محیطی دریافت می‌کند:
-متغیر              کاربرد                 وضعیت
-BALE_BOT_TOKEN   توکن ربات بله          ضروری BALE_ADMIN_ID    شناسهٔ عددی مدیر اصلی   اختیاری؛ مقدار پیش‌فرض 0
-در لینوکس یا ترمینال‌های سازگار با export، متغیرها را پیش از اجرا تنظیم کن:
-export BALE_BOT_TOKEN="توکن_جدید_ربات"
-export BALE_ADMIN_ID="شناسه_عددی_مدیر"
+```
+
+If the `python` command is not available in your environment, use `python3`.
+
+2. Configure the bot credentials.
+
+The application reads sensitive values from environment variables:
+
+| Variable | Purpose | Status |
+|---|---|---|
+| `BALE_BOT_TOKEN` | Bale bot token | Required |
+| `BALE_ADMIN_ID` | Numeric ID of the main administrator | Optional; defaults to 0 |
+
+On Linux or terminals that support `export`, set the variables before running the application:
+
+```bash
+export BALE_BOT_TOKEN="your_new_bot_token"
+export BALE_ADMIN_ID="numeric_admin_id"
 python safabat_bot.py
-روش تنظیم متغیرهای محیطی در Pydroid، ویندوز و سرویس‌های میزبانی ممکن است متفاوت باشد.
-مهم: توکن واقعی را در README، کد منبع، پیام عمومی یا مخزن GitHub قرار نده. اگر توکن قبلی منتشر شده است، آن را از پنل بله باطل کن و از توکن جدید استفاده کن.
-۳. اجرای ربات
+```
+
+The method for setting environment variables may differ in Pydroid, Windows, and hosting services.
+
+Important: Never put a real token in the README, source code, public messages, or a GitHub repository. If a token has already been exposed, revoke it through the Bale panel and use a new one.
+
+3. Run the bot:
+
+```bash
 python safabat_bot.py
-برای اتصال به API بله، دسترسی اینترنت لازم است. پایگاه دادهٔ safabat.db در کنار فایل برنامه ساخته می‌شود. برنامه همچنین از فایل‌های گزارش و قفل استفاده می‌کند.
-۴. اجرای تست داخلی
-پس از راه‌اندازی، دستور زیر برای اجرای تست‌های داخلی در دسترس است:
+```
+
+An internet connection is required to communicate with the Bale API. The `safabat.db` database is created next to the application file. The program also uses log and lock files.
+
+4. Run the internal test.
+
+After setup, the following command is available for internal tests:
+
+```text
 /selftest
-تست داخلی جایگزین بررسی همهٔ قابلیت‌ها در یک گروه آزمایشی بله نیست.
+```
 
-👥 افزودن به گروه
+Internal tests are not a substitute for checking every feature in a test Bale group.
 
-ربات را به گروه موردنظر در بله اضافه کن.
-فقط دسترسی‌های لازم را به آن بده. برای قابلیت‌هایی مانند حذف پیام یا مسدودکردن اعضا، ممکن است دسترسی ادمین لازم باشد.
-پیش از استفادهٔ جدی، امکانات و سطح دسترسی ربات را در یک گروه آزمایشی بررسی کن.
+👥 Adding the Bot to a Group
 
-📁 فایل‌های مهم
+- Add the bot to the desired Bale group.
+- Grant only the permissions it needs. Features such as deleting messages or banning members may require administrator permissions.
+- Before regular use, test the bot's features and permission level in a test group.
 
-نام فایل           توضیح
-safabat_bot.py   کد اصلی ربات safabat.db       پایگاه دادهٔ SQLite؛ هنگام اجرا ساخته می‌شود safabat.log      گزارش‌های اجرا safabat.lock     فایل مربوط به قفل اجرای هم‌زمان
-فایل‌های ایجادشده هنگام اجرا لزوماً در مخزن GitHub قرار نمی‌گیرند.
+📁 Important Files
 
-🔐 نکات امنیتی
+| File | Description |
+|---|---|
+| `safabat_bot.py` | Main bot source code |
+| `safabat.db` | SQLite database |
+| `safabat.log` | Runtime logs |
+| `safabat.lock` | File used to prevent concurrent execution |
 
-توکن ربات و اطلاعات خصوصی را در مخزن عمومی منتشر نکن.
-اگر توکن افشا شد، آن را باطل کن و توکن جدید بساز.
-پایگاه داده و گزارش‌ها ممکن است اطلاعات فعالیت گروه را در خود داشته باشند؛ آن‌ها را عمومی منتشر نکن.
-پیش از اعطای دسترسی ادمین، ربات را در محیطی آزمایشی بررسی کن.
+Files created at runtime are not necessarily included in the GitHub repository.
 
-📌 وضعیت پروژه
+🔐 Security Notes
 
-صفابات در حال توسعه است. پایداری اتصال، سازگاری با محیط اجرا و عملکرد تمام قابلیت‌ها باید در عمل بررسی شوند؛ بنابراین این مستندات به‌تنهایی به معنی تأیید کامل عملکرد ربات نیستند.
+- Do not publish the bot token or private information in a public repository.
+- If a token is exposed, revoke it and generate a new one.
+- The database and logs may contain group activity information; do not publish them publicly.
+- Test the bot in a controlled environment before granting it administrator access.
+
+📌 Project Status
+
+Safabat is under development. Connection stability, runtime compatibility, and the behavior of all features still need to be checked in practice. These documents alone do not mean that the bot's complete functionality has been verified.
