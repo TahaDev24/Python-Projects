@@ -1,61 +1,62 @@
-WORLD WAR 4
+# WORLD WAR 4
 
-یک بازی استراتژیک و مدیریتی گسترده برای پیام‌رسان بله، با تمرکز بر اقتصاد، توسعه کشورها، فناوری، تجارت، دیپلماسی و نبردهای چندمرحله‌ای. بازیکنان می‌توانند کشور خود را مدیریت کنند، قدرت نظامی و اقتصادی بسازند و در رقابت‌های جهانی شرکت کنند.
+A large-scale strategy and management game for the Bale messaging platform, focused on economics, national development, technology, trade, diplomacy, and multi-stage battles. Players can manage their own country, build military and economic power, and take part in global competitions.
 
-✨ امکانات اصلی
+✨ Main Features
 
-- نقشه جهان شامل ۶ منطقه، ۲۰ کشور و حدود ۱۳۰ شهر
-- سیستم اقتصادی با ۹ منبع، تولید، مصرف، مالیات و تورم
-- ۱۷ ساختمان قابل ساخت و ارتقا
-- ۴۸ فناوری در ۸ شاخه تحقیقاتی
-- ۴۸ یگان نظامی در ۱۴ دسته با ۶ سطح کمیابی
-- سیستم جنگ چندمرحله‌ای، تصرف شهر و نبردهای نوبتی
-- بازار پویا، سفارش‌های معاملاتی و سرمایه‌گذاری
-- اتحادها، خزانه مشترک، رأی‌گیری و پروژه‌های گروهی
-- دیپلماسی، پیمان‌ها و عملیات اطلاعاتی
-- رویدادهای جهانی و منطقه‌ای
-- ۳۷ مأموریت، ۱۰۳ دستاورد و ۱۰ جدول رتبه‌بندی
-- پاداش روزانه و سیستم پیشرفت بازیکنان
+- World map containing 6 regions, 20 countries, and approximately 130 cities
+- Economic system with 9 resources, production, consumption, taxes, and inflation
+- 17 buildings that can be constructed and upgraded
+- 48 technologies across 8 research branches
+- 48 military units in 14 categories with 6 rarity levels
+- Multi-stage war system, city capture, and turn-based battles
+- Dynamic market, trade orders, and investment
+- Alliances, shared treasury, voting, and group projects
+- Diplomacy, treaties, and intelligence operations
+- Global and regional events
+- 37 missions, 103 achievements, and 10 leaderboards
+- Daily rewards and player progression system
 
-🧰 ساختار فنی
+🧰 Technical Structure
 
-- توسعه‌یافته با Python 3.9+
-- پایگاه داده SQLite با بیش از ۵۰ جدول
-- معماری ماژولار و مدیریت تراکنش‌های پایگاه داده
-- سیستم پشتیبان‌گیری و بازیابی اطلاعات
-- مدیریت درخواست‌ها، محدودسازی نرخ ارسال و جلوگیری از اجرای تکراری
-- بیش از ۳۶۰ تابع و حدود ۵۸۰۰ خط کد
-- بدون نیاز به کتابخانه‌های خارجی
+- Built with Python 3.9+
+- SQLite database with more than 50 tables
+- Modular architecture and database transaction management
+- Data backup and recovery system
+- Request management, sending rate limits, and duplicate-execution prevention
+- More than 360 functions and approximately 5,800 lines of code
+- No external libraries required
 
-🚀 نصب و راه‌اندازی
+🚀 Installation and Setup
 
-۱. Python نسخه 3.9 یا بالاتر را روی سرور داشته باشید.
+1. Make sure Python 3.9 or later is installed on your server.
+2. Get the `world_war_4.py` file.
+3. Enter the bot token and administrator ID in the file settings.
+4. Run the bot:
 
-۲. فایل "world_war_4.py" را دریافت کنید.
-
-۳. مقدار توکن ربات و شناسه مدیر را در تنظیمات فایل وارد کنید.
-
-۴. ربات را اجرا کنید:
-
+```bash
 python3 world_war_4.py
+```
 
-برای اجرای تست‌های داخلی:
+To run the internal tests:
 
+```bash
 python3 world_war_4.py --selftest
+```
 
-🛡️ مدیریت و امنیت
+🛡️ Management and Security
 
-- پنل مدیریت اختصاصی
-- مدیریت و جست‌وجوی بازیکنان
-- مسدودسازی کاربران
-- مدیریت منابع و اقتصاد
-- ارسال پیام همگانی
-- ثبت گزارش خطاها و رویدادها
-- پشتیبان‌گیری خودکار
-- سیستم محدودسازی درخواست‌ها و کنترل هم‌زمانی
+- Dedicated administration panel
+- Player management and search
+- User banning
+- Resource and economy management
+- Broadcast messaging
+- Error and event logging
+- Automatic backups
+- Request rate limiting and concurrency control
 
-📌 وضعیت پروژه
+📌 Project Status
 
-پروژه روی پیام‌رسان بله آزمایش شده و عملکرد آن تأیید شده است. همچنین دارای ۳۸ تست داخلی برای بررسی بخش‌های مختلف سیستم است.
+The project has been tested on the Bale messaging platform, and its operation has been verified. It also includes 38 internal tests covering different parts of the system.
 
-WORLD WAR 4 یک پروژه گسترده با تمرکز بر ترکیب اقتصاد، استراتژی، مدیریت و تعامل چندنفره است.
+WORLD WAR 4 is a large-scale project focused on combining economics, strategy, management, and multiplayer interaction.
