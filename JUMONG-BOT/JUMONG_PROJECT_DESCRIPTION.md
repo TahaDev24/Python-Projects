@@ -1,58 +1,59 @@
 🏛️ JUMONG BOT
 
-یک ربات تعاملی مبتنی بر Python برای پیام‌رسان بله، با محوریت جهان تاریخی جومونگ و گوگوریو. این پروژه مجموعه‌ای از بازی‌های مستقل، سناریوهای داستانی چندمسیره، سیستم‌های امتیازدهی و محتوای اطلاعاتی را در قالب یک ساختار یکپارچه ارائه می‌کند. تعامل کاربران از طریق منوهای پویا، انتخاب‌های مرحله‌ای و رویدادهای اختصاصی انجام می‌شود.
+An interactive Python bot for the Bale messaging platform, inspired by the historical world of Jumong and Goguryeo. The project brings together a collection of independent games, branching story scenarios, scoring systems, and informational content in one integrated structure. Users interact with the bot through dynamic menus, step-by-step choices, and dedicated events.
 
-✨ امکانات اصلی
+✨ Main Features
 
-- 🏹 چهار تجربه تعاملی شامل کمانداری، داستان جنگ، آزمون اطلاعاتی و شخصیت‌شناسی
-- ⚔️ سیستم روایت چندمسیره با امکان انتخاب تصمیم‌های مختلف
-- 🏯 ساختار محتوایی چندبخشی با محوریت تاریخ و جهان جومونگ
-- 🎮 طراحی مراحل و سناریوهای تعاملی مبتنی بر انتخاب کاربر
-- 🏆 سیستم امتیازدهی و ثبت پیشرفت کاربران
-- 🔐 بخش‌های مخفی و مسیرهای ویژه قابل دسترسی
-- 🧭 منوی اصلی با ۸ بخش مجزا و ساختار ناوبری یکپارچه
-- 📜 محتوای تاریخی، شخصیت‌ها، مکان‌ها و بخش‌های داستانی
-- 🔘 مدیریت صفحات، دکمه‌ها و رویدادهای تعاملی
+- 🏹 Four interactive experiences: archery, war story, knowledge quiz, and personality quiz
+- ⚔️ Branching narrative system with multiple decision paths
+- 🏯 Multi-section content structure inspired by the history and world of Jumong
+- 🎮 User-choice-based stages and interactive scenarios
+- 🏆 User scoring and progress tracking
+- 🔐 Hidden sections and special paths that can be unlocked
+- 🧭 Main menu with 8 separate sections and unified navigation
+- 📜 Historical content, characters, locations, and story sections
+- 🔘 Management of pages, buttons, and interactive events
 
-🧰 ساختار فنی
+🧰 Technical Structure
 
-- 🐍 توسعه‌یافته با Python 3.9+
-- 🧩 معماری تک‌فایلی با ساختار پردازش یکپارچه
-- 🔌 ارتباط مستقیم با Bale Bot API
-- 🔄 دریافت و پردازش رویدادها از طریق Long Polling
-- 💾 ذخیره‌سازی امتیاز کاربران در قالب JSON
-- ⚙️ مدیریت وضعیت بازی‌ها و جریان‌های تعاملی
-- 🛠️ سیستم مدیریت خطاهای شبکه، Retry و پاسخ‌های API
-- 🔒 اعتبارسنجی ورودی‌ها و مدیریت Callbackها
-- 📦 بدون نیاز به کتابخانه‌های خارجی
+- 🐍 Built with Python 3.9+
+- 🧩 Single-file architecture with an integrated processing structure
+- 🔌 Direct communication with the Bale Bot API
+- 🔄 Event retrieval and processing through Long Polling
+- 💾 User scores stored in JSON format
+- ⚙️ Game-state and interactive-flow management
+- 🛠️ Network error handling, retries, and API responses
+- 🔒 Input validation and callback handling
+- 📦 No external libraries required
 
-🚀 نصب و راه‌اندازی
+🚀 Installation and Setup
 
-۱. Python نسخه 3.9 یا بالاتر را روی سرور داشته باشید.
+1. Make sure Python 3.9 or later is installed on your server.
+2. Get the `jumong_bot.py` file.
+3. Set the bot token in the file's configuration section.
+4. Run the bot:
 
-۲. فایل "jumong_bot.py" را دریافت کنید.
-
-۳. توکن ربات را در بخش تنظیمات فایل قرار دهید.
-
-۴. ربات را اجرا کنید:
-
+```bash
 python3 jumong_bot.py
+```
 
-برای اجرای تست‌های داخلی:
+To run the internal tests:
 
+```bash
 python3 jumong_bot.py --selftest
+```
 
-🛡️ مدیریت و امنیت
+🛡️ Management and Security
 
-- اعتبارسنجی پیام‌ها و رویدادهای دریافتی
-- کنترل و پردازش Callback Queryها
-- مدیریت خطاهای ارتباطی و پاسخ‌های نامعتبر API
-- سیستم تلاش مجدد برای درخواست‌های ناموفق
-- مدیریت محدودیت نرخ درخواست‌ها
-- جلوگیری از اختلال در جریان اجرای بازی‌ها
-- مدیریت وضعیت‌های ناقص و پاک‌سازی داده‌های موقت
-- ذخیره‌سازی اطلاعات امتیازی کاربران بر اساس شناسه عددی
+- Validation of incoming messages and events
+- Handling and processing of Callback Queries
+- Handling connection errors and invalid API responses
+- Retry system for failed requests
+- Request rate-limit management
+- Protection against interruptions in game execution flows
+- Handling incomplete states and cleaning up temporary data
+- User score storage based on numeric identifiers
 
-📌 وضعیت پروژه
+📌 Project Status
 
-پیاده‌سازی بخش‌های اصلی پروژه تکمیل شده است. ساختار کد از نظر نحوی بررسی شده و ۴۸ تست داخلی با موفقیت اجرا شده‌اند. این تست‌ها بخش‌های ناوبری، بازی‌ها، آزمون‌ها، مسیرهای داستانی، ذخیره‌سازی امتیاز، پردازش رویدادها و مدیریت خطاها را پوشش می‌دهند. همچنین ۱۱۲ مسیر و دکمه ناوبری در فرایند تست بررسی شده‌اند.
+The main parts of the project have been implemented. The code structure has been checked for syntax, and 48 internal tests have been run successfully. These tests cover navigation, games, quizzes, story paths, score storage, event processing, and error handling. In addition, 112 navigation paths and buttons were checked during the test process.
