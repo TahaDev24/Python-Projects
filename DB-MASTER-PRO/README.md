@@ -1,59 +1,77 @@
 # DB MASTER PRO
 
-محیط گرافیکی مدیریت پایگاه داده‌های SQLite که با Python و Kivy ساخته شده است. هدف پروژه فراهم‌کردن ابزارهای رایج مشاهده، ویرایش، نگهداری و انتقال داده در یک برنامه مستقل است.
+**A single-file SQLite administration studio built with Python and Kivy.**
 
-## قابلیت‌ها
+DB MASTER PRO provides a graphical workspace for inspecting and managing SQLite database files. The application is designed for desktop-style use and Android environments that support Kivy, including Pydroid 3.
 
-- بازکردن و مدیریت فایل‌های SQLite
-- مشاهده جدول‌ها، ساختار آن‌ها و رکوردها
-- نوشتن و اجرای دستورهای SQL
-- افزودن و ویرایش رکوردها
-- ساخت و مدیریت ایندکس‌ها
-- پشتیبان‌گیری و بازیابی پایگاه داده
-- واردکردن و خروجی‌گرفتن داده با CSV
-- ابزارهای نگهداری مانند بررسی سلامت، `ANALYZE` و `VACUUM`
-- داشبورد دسترسی به بخش‌های اصلی برنامه
+## Features
 
-## فناوری‌ها
+- Open and inspect SQLite database files.
+- Browse tables, columns, and records.
+- Execute SQL statements.
+- Add and edit records.
+- Create and manage indexes.
+- Back up and restore database files.
+- Import and export tabular data using CSV.
+- Run database maintenance operations such as integrity checks, `ANALYZE`, and `VACUUM`.
 
-| فناوری | کاربرد |
-|---|---|
-| Python | منطق برنامه |
-| Kivy | رابط گرافیکی |
-| SQLite | ذخیره‌سازی و مدیریت داده |
-| CSV | انتقال داده |
+## Technology
 
-## نیازمندی‌ها
+| Component | Purpose |
+| --- | --- |
+| Python | Application logic |
+| Kivy | Graphical user interface |
+| SQLite | Database engine |
+| CSV | Data exchange |
 
-- Python
+## Requirements
+
+- Python 3
 - Kivy
-- برای نمایش بهتر متن فارسی در برخی محیط‌ها (اختیاری): `arabic-reshaper` و `python-bidi`
+- Optional: `arabic-reshaper` and `python-bidi` for improved Persian text rendering in environments that need text shaping.
 
-نصب وابستگی‌ها در محیط سازگار:
+Install the dependencies:
 
 ```bash
 python -m pip install kivy
+```
+
+Optional Persian text support:
+
+```bash
 python -m pip install arabic-reshaper python-bidi
 ```
 
-دو بسته آخر اختیاری‌اند.
+## Run
 
-## اجرا
+From this directory, execute:
 
 ```bash
 python DB_MASTER_PRO.py
 ```
 
-فایل اصلی برنامه: `DB_MASTER_PRO.py`
+## Android / Pydroid 3
 
-این پروژه با درنظرگرفتن اجرا در محیط‌های سازگار با Android و Pydroid 3 طراحی شده است؛ بااین‌حال سازگاری نهایی به نسخه Python، Kivy و محیط دستگاه بستگی دارد.
+1. Install and configure Kivy in Pydroid 3.
+2. Grant the file access permissions required by your Android version.
+3. Open `DB_MASTER_PRO.py` in Pydroid 3 and run it.
+4. Select a database file that you are authorized to access.
 
-## نکات
+Android storage restrictions may prevent access to some protected directories. Availability depends on the Android version and device configuration.
 
-- پیش از انجام عملیات نگهداری یا ویرایش روی دیتابیس مهم، نسخه پشتیبان تهیه کنید.
-- دستورات SQL می‌توانند داده‌ها را تغییر دهند یا حذف کنند؛ پیش از اجرا آن‌ها را بررسی کنید.
-- این مخزن راهنمای پروژه و فایل منبع را نگه می‌دارد؛ فایل دیتابیس شخصی خود را به مخزن عمومی اضافه نکنید.
+## Data safety
 
----
+> [!WARNING]
+> SQL statements and maintenance operations can modify or remove database content. Back up important databases before running write queries, restoring backups, or performing maintenance.
 
-[بازگشت به فهرست پروژه‌ها](../README.md)
+Do not commit personal database files or production data to this public repository.
+
+## Project files
+
+```text
+DB-MASTER-PRO/
+├── DB_MASTER_PRO.py
+└── README.md
+```
+
+[Back to repository overview](../README.md)
