@@ -13,6 +13,10 @@
 - [ ] Added or updated functionality
 - [ ] Improved project maintenance
 
+## Implementation Notes
+
+<!-- Mention important technical decisions or details reviewers should know. -->
+
 ## Validation
 
 <!-- List the checks you performed. Be honest about anything not tested. -->
@@ -21,8 +25,17 @@
 - [ ] Ran relevant tests or checks
 - [ ] Updated documentation where needed
 
+## Screenshots
+
+<!-- Add screenshots or recordings for visible changes, or write "N/A". -->
+
+## Compatibility and Migration
+
+<!-- Describe breaking changes, required configuration, or migration steps. Write "N/A" if none. -->
+
 ## Checklist
 
 - [ ] The change is focused and consistent with the project
 - [ ] No unrelated files were modified
 - [ ] I have described any limitations or untested behavior
+- [ ] No secrets, credentials, or private data are included
