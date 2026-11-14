@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible problem in one of the projects.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please provide enough detail to reproduce the issue.
+  - type: input
+    id: project
+    attributes:
+      label: Project
+      description: Which project is affected?
+      placeholder: FILE-ORGANIZER
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem clearly.
+      placeholder: A clear description of the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the steps needed to reproduce the issue.
+      placeholder: |
+        1. Run ...
+        2. Select ...
+        3. See the error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include your OS, Python version, and relevant dependency versions.
+      placeholder: OS / Python version / dependency versions
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages or logs
+      description: Paste relevant logs. Remove tokens, passwords, and personal data before submitting.
+      render: text
+    validations:
+      required: false
