@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+secrets/
+*.token
+
+# Runtime databases and application data
+*.db
+*.sqlite
+*.sqlite3
+*_scores.json
+jumong_scores.json
+ww4_backups/
+
+# Logs and lock files
+*.log
+*.lock
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
