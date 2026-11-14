@@ -229,6 +229,12 @@ class FileOrganizerApp(App):
         self.preview_list.clear_widgets()
 
     def make_preview(self, *_):
+        # هر بار پیش‌نمایش جدید شروع می‌شود، برنامهٔ قبلی را باطل کن.
+        # در غیر این صورت خطای اعتبارسنجی می‌تواند اجرای برنامهٔ قدیمی را ممکن کند.
+        self.plan = []
+        self.run_button.disabled = True
+        self.clear_preview()
+
         folder = Path(self.current_folder)
 
         if not folder.is_dir():
