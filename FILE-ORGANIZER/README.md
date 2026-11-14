@@ -1,76 +1,83 @@
 # FILE ORGANIZER
 
-ابزار گرافیکی برای مرتب‌سازی فایل‌های یک پوشه بر اساس پسوند، ساخته‌شده با Python و Kivy.
+**A preview-first file organization utility built with Python and Kivy.**
 
-## قابلیت‌ها
+FILE ORGANIZER scans the files directly inside a selected folder, groups them by file type, and prepares a move plan for the user to review before any files are moved.
 
-- انتخاب پوشه از طریق فایل‌گزین
-- شناسایی نوع فایل بر اساس پسوند
-- نمایش پیش‌نمایش تغییرات پیش از اجرا
-- انتقال فایل‌ها فقط پس از تأیید کاربر
-- جلوگیری از بازنویسی فایل‌های هم‌نام با ساخت نام جایگزین
-- نمایش گزارش تعداد فایل‌های منتقل‌شده و خطاهای احتمالی
-- عملکرد آفلاین و بدون نیاز به سرویس خارجی
+## Features
 
-## دسته‌بندی‌ها
+- Select a folder through the graphical file chooser.
+- Classify files by extension.
+- Preview the proposed organization before execution.
+- Move files only after user confirmation.
+- Avoid overwriting existing files by generating an alternative destination name.
+- Display a summary of completed moves and errors.
+- Work locally without requiring an external service.
 
-| پوشه مقصد | نمونه پسوندها |
-|---|---|
-| تصاویر | PNG، JPG، GIF، WEBP |
-| ویدیوها | MP4، MKV، MOV، AVI |
-| صداها | MP3، WAV، AAC، FLAC |
-| اسناد | PDF، DOCX، TXT، XLSX |
-| فشرده‌ها | ZIP، RAR، 7Z |
-| کدنویسی | PY، JS، HTML، CSS، JSON |
-| نصب‌کننده‌ها | APK، EXE، MSI |
-| سایر فایل‌ها | پسوندهای ناشناخته |
+## File categories
 
-## نیازمندی‌ها
+| Category | Example extensions |
+| --- | --- |
+| Images | `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.heic` |
+| Videos | `.mp4`, `.mkv`, `.mov`, `.avi`, `.webm` |
+| Audio | `.mp3`, `.wav`, `.aac`, `.ogg`, `.flac` |
+| Documents | `.pdf`, `.docx`, `.txt`, `.xlsx`, `.pptx` |
+| Archives | `.zip`, `.rar`, `.7z`, `.tar`, `.gz` |
+| Source code | `.py`, `.js`, `.html`, `.css`, `.java`, `.json`, `.sql` |
+| Installers | `.apk`, `.exe`, `.msi`, `.dmg`, `.deb` |
+| Other | Extensions not listed above |
+
+## Requirements
 
 - Python 3
 - Kivy
+
+Install Kivy in a compatible Python environment:
 
 ```bash
 python -m pip install kivy
 ```
 
-برای شکل‌دهی بهتر حروف فارسی در بعضی محیط‌ها، این دو بسته اختیاری‌اند:
+Optional Persian text shaping:
 
 ```bash
 python -m pip install arabic-reshaper python-bidi
 ```
 
-## اجرا در دسکتاپ
+## Run on desktop
+
+From this directory:
 
 ```bash
 python file_organizer.py
 ```
 
-## اجرا در Android با Pydroid 3
+## Run on Android with Pydroid 3
 
-1. نصب و آماده‌بودن Kivy در Pydroid 3 را بررسی کنید.
-2. مجوز دسترسی لازم به فایل‌ها را برای Pydroid فعال کنید.
-3. فایل `file_organizer.py` را اجرا کنید.
-4. پوشه موردنظر را انتخاب کنید، پیش‌نمایش را بررسی کنید و فقط در صورت اطمینان عملیات را تأیید کنید.
+1. Make sure Kivy is installed and working in Pydroid 3.
+2. Grant the storage permissions required by your Android version.
+3. Open and run `file_organizer.py`.
+4. Select a folder, review the preview, and confirm only when the proposed moves are correct.
 
-دسترسی به بعضی پوشه‌های محافظت‌شده Android ممکن است حتی با فعال‌بودن مجوزها محدود باشد.
+Android may restrict access to protected storage locations even when application permissions are enabled.
 
-## رفتار و محدودیت‌ها
+## Behavior and limitations
 
-- برنامه فقط فایل‌های مستقیم داخل پوشه انتخاب‌شده را بررسی می‌کند و وارد زیرپوشه‌ها نمی‌شود.
-- فایل‌ها حذف نمی‌شوند؛ فقط به پوشه دسته‌بندی‌شده منتقل می‌شوند.
-- بدون تأیید نهایی کاربر، انتقال انجام نمی‌شود.
-- فایل هم‌نام بازنویسی نمی‌شود و برای آن نامی تازه ساخته می‌شود.
-- قابلیت بازگردانی خودکار (Undo) در نسخه فعلی مستند نشده است؛ پیش از مرتب‌سازی پوشه‌های مهم، نسخه پشتیبان تهیه کنید.
+- Only files directly inside the selected folder are considered; subdirectories are not scanned recursively.
+- Files are moved into category folders; they are not intentionally deleted.
+- A move plan must be reviewed and confirmed before execution.
+- Existing destination files are not overwritten; a unique alternative name is generated.
+- An automatic undo feature is not documented in the current implementation.
 
-## ساختار
+> [!CAUTION]
+> Test the organizer on a sample folder first. Keep a backup of important files before organizing them.
+
+## Project files
 
 ```text
 FILE-ORGANIZER/
-├── README.md
-└── file_organizer.py
+├── file_organizer.py
+└── README.md
 ```
 
----
-
-[بازگشت به فهرست پروژه‌ها](../README.md)
+[Back to repository overview](../README.md)

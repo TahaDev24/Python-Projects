@@ -1,91 +1,105 @@
 # SAFABAT
 
-ربات چندمنظوره برای گروه‌های پیام‌رسان بله که امکانات سرگرمی، رقابت و مدیریت گروه را در یک برنامه تک‌فایلی ترکیب می‌کند.
+**A multi-purpose companion bot for groups on Bale Messenger.**
 
-## قابلیت‌ها
+SAFABAT combines group utilities, entertainment, games, progression systems, and moderation features in a single Python application backed by SQLite.
 
-- منوها و تنظیمات گروه
-- پاسخ‌گویی متنی و ابزارهای سرگرمی
-- جوک، جوک‌متر و فال
-- مجموعه بازی‌ها
-- امتیاز تجربه (XP)، سطح، مدال، مأموریت و لیگ
-- آمار و قابلیت‌های مرتبط با حافظه ربات
-- ابزارهای مدیریت گروه
-- رویدادها و بخش آزمایشگاه
-- ذخیره‌سازی داده با SQLite
-- ثبت گزارش اجرا و خطاها
+## Features
 
-فهرست بالا بر اساس توضیحات و ساختار پروژه تنظیم شده است؛ عملکرد همه قابلیت‌ها در محیط زنده بله در این تغییر مستنداتی دوباره بررسی نشده است.
+- Group menus and configurable settings.
+- Text-triggered responses and entertainment tools.
+- Jokes, joke ratings, and fortune features.
+- A collection of interactive games.
+- XP, levels, medals, missions, and league progression.
+- User and group statistics.
+- Group management and moderation tools.
+- Events and experimental features.
+- Persistent storage using SQLite.
+- Application logging and single-instance locking.
 
-## نیازمندی‌ها
+The feature list describes the capabilities represented in the source code. Availability in a live group depends on bot permissions and the Bale platform.
 
-- Python 3.10 یا بالاتر
-- کتابخانه `requests`
-- توکن معتبر ربات بله
+## Requirements
 
-نصب وابستگی:
+- Python 3.10 or later
+- `requests`
+- A Bale bot token
+
+Install the dependency:
 
 ```bash
 python -m pip install requests
 ```
 
-## پیکربندی
+## Configuration
 
-اطلاعات محرمانه از متغیرهای محیطی خوانده می‌شوند:
+SAFABAT reads credentials from environment variables.
 
-| متغیر | کاربرد | وضعیت |
-|---|---|---|
-| `BALE_BOT_TOKEN` | توکن ربات بله | الزامی |
-| `BALE_ADMIN_ID` | شناسه عددی مدیر اصلی | اختیاری؛ مقدار پیش‌فرض 0 |
+| Variable | Required | Description |
+| --- | --- | --- |
+| `BALE_BOT_TOKEN` | Yes | Token for the Bale bot |
+| `BALE_ADMIN_ID` | No | Numeric ID of the primary administrator; defaults to `0` |
 
-در Linux و محیط‌هایی که از `export` پشتیبانی می‌کنند:
+Example for Linux and macOS:
 
 ```bash
 export BALE_BOT_TOKEN="YOUR_BOT_TOKEN"
 export BALE_ADMIN_ID="YOUR_NUMERIC_ADMIN_ID"
-python safabat_bot.py
 ```
 
-روش تنظیم متغیر محیطی در Windows، Pydroid و سرویس‌های میزبانی متفاوت است.
+PowerShell example:
 
-**هشدار:** توکن واقعی را در فایل منبع، README یا مخزن عمومی قرار ندهید. اگر توکن افشا شد، آن را از پنل بله باطل کنید و توکن تازه بسازید.
+```powershell
+$env:BALE_BOT_TOKEN = "YOUR_BOT_TOKEN"
+$env:BALE_ADMIN_ID = "YOUR_NUMERIC_ADMIN_ID"
+```
 
-## اجرا
+## Run
+
+From this directory:
 
 ```bash
 python safabat_bot.py
 ```
 
-برای ارتباط با API بله اتصال اینترنت لازم است. فایل پایگاه داده `safabat.db` و فایل‌های گزارش و قفل هنگام اجرا در کنار برنامه ایجاد می‌شوند.
+The bot requires an internet connection to communicate with Bale. On startup, it creates its SQLite database and runtime files alongside the source file.
 
-## آزمون داخلی
+## Built-in self-test
 
-دستور زیر در خود برنامه برای اجرای آزمون‌های داخلی در نظر گرفته شده است:
+Send the following command in the bot's supported test context:
 
 ```text
 /selftest
 ```
 
-آزمون داخلی جایگزین بررسی قابلیت‌ها در یک گروه آزمایشی بله نیست.
+The self-test uses a temporary database. It does not replace testing the bot in a dedicated test group.
 
-## فایل‌های زمان اجرا
+## Runtime files
 
-| فایل | کاربرد |
-|---|---|
-| `safabat_bot.py` | کد اصلی ربات |
-| `safabat.db` | پایگاه داده SQLite |
-| `safabat.log` | گزارش‌های اجرا |
-| `safabat.lock` | جلوگیری از اجرای هم‌زمان |
+| File | Purpose |
+| --- | --- |
+| `safabat.db` | SQLite database |
+| `safabat.log` | Runtime log |
+| `safabat.lock` | Single-instance lock |
 
-فایل‌های داده و گزارش زمان اجرا نباید به مخزن عمومی Commit شوند.
+These files may contain user or group activity data. Keep them out of public commits and restrict access on the host.
 
-## نکات امنیتی
+## Deployment notes
 
-- توکن و اطلاعات خصوصی را منتشر نکنید.
-- پایگاه داده و گزارش‌ها ممکن است اطلاعات فعالیت گروه را در خود داشته باشند.
-- پیش از اعطای دسترسی مدیریتی، ربات را در گروه آزمایشی بررسی کنید.
-- فقط مجوزهایی را بدهید که قابلیت‌های موردنیاز واقعاً به آن‌ها احتیاج دارند.
+1. Configure the environment variables before starting the process.
+2. Add the bot to a test group first.
+3. Grant administrator permissions only if the moderation features you intend to use require them.
+4. Verify the bot's behavior and permissions before adding it to production groups.
 
----
+> [!WARNING]
+> Never hard-code a real token into a public source file. If a token is exposed, revoke it immediately and replace it.
 
-[بازگشت به فهرست پروژه‌ها](../README.md)
+## Project files
+
+```text
+SAFA-MANAGEMENT/
+├── safabat_bot.py
+└── README.md
+```
+
+[Back to repository overview](../README.md)

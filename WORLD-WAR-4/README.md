@@ -1,58 +1,87 @@
 # WORLD WAR 4
 
-بازی راهبردی و مدیریتی برای پیام‌رسان بله با تمرکز بر اقتصاد، توسعه کشور، فناوری، تجارت، دیپلماسی و نبردهای مرحله‌ای.
+**A turn-based strategy and nation-management game delivered through Bale Messenger.**
 
-## قابلیت‌های اصلی
+WORLD WAR 4 combines economic development, research, trade, diplomacy, alliances, and turn-based battles in a persistent multiplayer game.
 
-- نقشه جهان با ۶ منطقه، ۲۰ کشور و حدود ۱۳۰ شهر
-- اقتصاد با ۹ منبع، تولید، مصرف، مالیات و تورم
-- ساختمان‌ها و سامانه ارتقای آن‌ها
-- شاخه‌های پژوهش و فناوری
-- واحدهای نظامی و دسته‌بندی‌های آن‌ها
-- نبردهای نوبتی و سامانه تصرف شهر
-- بازار، سفارش‌های تجاری و سرمایه‌گذاری
-- اتحادها، خزانه مشترک و رأی‌گیری
-- دیپلماسی، پیمان‌ها و رویدادهای جهانی
-- مأموریت‌ها، دستاوردها و جدول‌های رتبه‌بندی
+## Game systems
 
-## ساختار فنی
+- World map containing six regions, 20 countries, and approximately 130 cities.
+- Economy with nine resources, production, consumption, taxation, and inflation.
+- Buildings and upgrade paths.
+- Research and technology progression.
+- Military units and unit categories.
+- Turn-based battles and city-control mechanics.
+- Markets, trade orders, and investments.
+- Alliances, shared treasuries, and voting.
+- Diplomacy, treaties, and world events.
+- Missions, achievements, and leaderboards.
 
-- Python 3.9 یا بالاتر
-- SQLite
-- معماری تک‌فایلی
-- مدیریت تراکنش‌های پایگاه داده
-- سازوکار پشتیبان‌گیری و بازیابی
-- مدیریت درخواست‌ها، محدودسازی نرخ و جلوگیری از اجرای تکراری
-- استفاده از کتابخانه استاندارد Python
+## Technical overview
 
-## راه‌اندازی
+| Component | Details |
+| --- | --- |
+| Language | Python 3.9+ |
+| Platform | Bale Messenger |
+| Storage | SQLite |
+| API client | Python standard library |
+| Architecture | Single-file application with separated internal game systems |
+| Tests | Built-in self-test mode |
 
-1. Python 3.9 یا بالاتر را روی سرور نصب کنید.
-2. فایل `world_war_4.py` را دریافت کنید.
-3. پیش از اجرا، مقدارهای پیکربندی ربات و مدیر را بررسی کنید.
-4. برنامه را اجرا کنید:
+The application uses SQLite transactions and a local database file. It also includes backup-related functionality and request-handling safeguards.
+
+## Requirements
+
+- Python 3.9 or later
+- A Bale bot token
+- A host with outbound internet access and permission to keep a Python process running
+
+The source file uses the Python standard library and does not require third-party packages.
+
+## Configuration
+
+Before deployment, open `world_war_4.py` and replace the placeholder value assigned to `BALE_BOT_TOKEN` with your bot token. Configure `ADMIN_ID` with the numeric administrator ID.
+
+Keep real credentials local. Do not commit a configured copy of the source file or share your token in issue reports.
+
+## Run
+
+Start the game bot:
 
 ```bash
 python3 world_war_4.py
 ```
 
-برای اجرای آزمون داخلی:
+Run the built-in test suite:
 
 ```bash
 python3 world_war_4.py --selftest
 ```
 
-## امنیت و داده‌ها
+## Data and backups
 
-- توکن ربات و شناسه‌های مدیریتی را محرمانه نگه دارید.
-- از قرار دادن توکن واقعی در مخزن عمومی خودداری کنید.
-- پایگاه داده و نسخه‌های پشتیبان ممکن است اطلاعات کاربران را نگه دارند؛ آن‌ها را منتشر نکنید.
-- پیش از استفاده در گروه واقعی، عملکرد و سطح دسترسی ربات را در محیط آزمایشی بررسی کنید.
+- The main database is created as `world_war_4.db` beside the source file.
+- Backup files are stored in the `ww4_backups/` directory.
+- Database and backup files may contain persistent player data. Do not publish them.
 
-## وضعیت آزمون
+> [!WARNING]
+> Back up the database before upgrading or changing the application. Test migrations and restore procedures on a copy before using a production database.
 
-مستندات فعلی پروژه، وجود ۳۸ آزمون داخلی و انجام بررسی روی پلتفرم بله را گزارش می‌کنند. این توضیح بازتاب مستندات موجود است و در جریان بازطراحی READMEها آزمون اجرایی تازه‌ای انجام نشده است.
+## Deployment checklist
 
----
+- [ ] Configure the bot token and administrator ID.
+- [ ] Run the built-in self-test.
+- [ ] Start the bot in a test environment.
+- [ ] Verify bot permissions and core game flows.
+- [ ] Confirm that database backups are being created and can be restored.
+- [ ] Keep the host, database, and credentials access-controlled.
 
-[بازگشت به فهرست پروژه‌ها](../README.md)
+## Project files
+
+```text
+WORLD-WAR-4/
+├── world_war_4.py
+└── README.md
+```
+
+[Back to repository overview](../README.md)
