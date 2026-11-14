@@ -33,6 +33,10 @@
 
 <!-- Describe breaking changes, required configuration, or migration steps. Write "N/A" if none. -->
 
+## Contributors
+
+<!-- If a commit contains substantial work from another contributor, credit them with a Co-authored-by trailer in that commit message. Use the email associated with their GitHub account. -->
+
 ## Checklist
 
 - [ ] The change is focused and consistent with the project
